@@ -1,10 +1,10 @@
 'use strinct'
 
-var React = require('react')
+import React from 'react'
 
 var Title = React.createClass({
     render: function () {
         return React.createElement('h1', null, 'Titulo')
     }
 })
-module.exports = Title
+export default Title
