@@ -3,6 +3,7 @@
 const path = require('path')
 
 module.exports = {
+    devtool: 'source-map',  // Facilita debug aplicacao
     entry: path.join(__dirname, 'src', 'index'),
     output:{
         path: path.join(__dirname, 'dist'),
