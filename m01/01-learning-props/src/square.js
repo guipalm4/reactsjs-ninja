@@ -4,14 +4,14 @@ import React from 'react'
 
 const Square = ({ color }) => (
   <div style={{
-    background: color,
+    backgroundColor: color,
     height: '100px',
     width: '100px'
   }}
   />
 )
 
-Square.defautProps = {
+Square.defaultProps = {
   color: 'red'
 }
 
