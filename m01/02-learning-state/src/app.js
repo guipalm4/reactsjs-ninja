@@ -15,9 +15,15 @@ class App extends Component {
     
   render () {
     return (
-      <div className='container'>
-      <LikeButton />
-      <SearchButton />
+      <div >
+        <Square color={this.state.color} /> 
+        {['red', 'green', 'blue'].map((color) => (
+          <Button 
+            key={color} 
+            handleClick={() => this.setState({ color })}>
+            {color}
+          </Button>
+        ))}
       </div>
     )
   }
