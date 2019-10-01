@@ -1,27 +1,29 @@
 'use strinct'
 
 import React, { Component } from 'react'
-import Title from './title'
 import Square from './square'
 import Button from './button'
-import LikeButton from './like-button'
-import SearchButton from './search-button'
 
 class App extends Component {
 
   constructor () {
       super()
       this.state = {
-        text: 'Guilherme'
+        color: 'green' 
       }
     }
     
   render () {
     return (
-      <div className='container' onClick={() => this.setState({
-          text: 'Outro texto'
-        })}>
-          {this.state.text}
+      <div >
+        <Square color={this.state.color} /> 
+        {['red', 'green', 'blue'].map((color) => (
+          <Button 
+            key={color} 
+            handleClick={() => this.setState({ color })}>
+            {color}
+          </Button>
+        ))}
       </div>
     )
   }
