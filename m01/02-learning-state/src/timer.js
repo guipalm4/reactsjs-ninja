@@ -14,6 +14,12 @@ class Timer extends Component {
     //quando componente recebe novas propriedade
     console.log('componentWillReceiveProps', this.props, nextProps)
   }
+
+  shouldComponentUpdate (nextProps, nextState) {
+    //verificar se há necessidade de renderizar o componente quando a mudança de state ou props
+    console.log('shouldComponentUpdate', this.props, nextProps)
+    return this.props.time != nextProps.time
+    }
  
   componentDidMount () {
     this.timer = setInterval(() => {
