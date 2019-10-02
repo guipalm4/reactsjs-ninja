@@ -17,13 +17,17 @@ class Timer extends Component {
 
   shouldComponentUpdate (nextProps, nextState) {
     //verificar se há necessidade de renderizar o componente quando a mudança de state ou props
-    console.log('shouldComponentUpdate timer', this.props, nextProps)
+    //console.log('shouldComponentUpdate timer', this.props, nextProps)
     return this.props.time != nextProps.time
   }
 
   componentWillUpdate (nextProps, nextState) {
     //não modificar state
     console.log('componentWillUpdate timer', this.props, nextProps)
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    console.log('componentDidUpdate timer', this.props, prevProps)
   }
  
   componentDidMount () {
