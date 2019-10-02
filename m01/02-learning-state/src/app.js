@@ -1,41 +1,38 @@
 'use strinct'
 
 import React, { Component } from 'react'
-import Square from './square'
-import Button from './button'
+import Timer from './timer'
 
 class App extends Component {
 
+  
   constructor () {
+    console.log('constructor')
       super()
       this.state = {
-        color: 'green' 
+        showTimer: true 
       }
-    }
-    
+  }
+  componentWillMount () {
+      console.log('componentWillMount')
+  }
+  
+  componentDidMount(){
+    console.log('componentDidMount')
+    //manipulação de DOM com bibliotecas externas - executa apenas no front
+  }
+  
   render () {
-    return (
+    console.log('render')
+    return (      
       <div >
-        <Square color={this.state.color} /> 
-        {['red', 'green', 'blue'].map((color) => (
-          <Button 
-            key={color} 
-            handleClick={() => this.setState({ color })}>
-            {color}
-          </Button>
-        ))}
+        {this.state.showTimer &&  <Timer />}
+        <button onClick={() => {
+          this.setState({ showTimer: !this.state.showTimer })
+        }}>Show / Hide Timer</button>
       </div>
     )
   }
 }
 
-/* const App = React.createClass({
-  render: function () {
-    return (
-      <div className='container'>
-        <Title name='Guilherme' lastname='Palma' />
-      </div>
-    )
-  }
-}) */
 export default App
