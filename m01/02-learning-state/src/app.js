@@ -6,9 +6,12 @@ import Button from './button'
 class App extends Component {
   render () {
     console.log('render app ')
+    //se retirar a chamada do handleClick() dará erro em funcao da protoType "isRequired"
     return (      
-      <div >
-        <Button>Clique em mim</Button>
+      <div >        
+        <Button handleClick={() => console.log('clicou')}>
+          Clique em mim
+        </Button>
       </div>
     )
   }

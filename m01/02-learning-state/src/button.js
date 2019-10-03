@@ -9,7 +9,7 @@ const Button = ({ children, handleClick }) => (
 )
 
 Button.protoTypes = {
-  //https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes
+  //Documentação: https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes
   handleClick: React.PropTypes.func.isRequired
 }
 
