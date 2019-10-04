@@ -4,26 +4,34 @@ import React, { Component } from 'react'
 
 class App extends Component {
 
+  constructor () {
+    super()
+    this.state = {
+      checked: false,
+      showContent: false
+    }
+  }
+
   render () {
     return (
-      <form 
-        onSubmit={(e) => {
-          e.preventDefault()
-          console.log('event', e)
-      }}
-        onChange={(e) => {
-          console.log('name', e.target.name)
-          console.log('name', e.target.value)
-        }}
-      >        
-        <textarea name='texto'defaultValue={'textarea \n value uncontrolled'}/><br /> 
-        <br/>
-        <label>Nome : </label>  
-        <input type='name' name='inNome' /><br/>
-        <label>Email : </label>
-        <input type='email' name='inEmail' /><br/><br/>
-        <button type='submit'>Enviar</button>  
-      </form>
+      <div>
+        <label>
+          <input
+            type='checkbox'
+            checked={this.state.checked}
+            onChange={() => {
+              this.setState({
+                 checked: !this.state.checked 
+              }, () => {
+                this.setState({ 
+                  showContent: this.state.checked 
+                }) 
+              })              
+            }}
+          /> Mostar conteúdo
+        </label>
+        {this.state.showContent && <div>Olha eu aqui!!!</div>}
+      </div>
     )
   }
 }
