@@ -1,16 +1,23 @@
 'use strinct'
 
 import React, { Component } from 'react'
-import Title from './title'
 import Square from './square'
+import Button from './button'
 
 class App extends Component {
+
+  constructor () {
+      super()
+      this.state = {
+        color: 'green' 
+      }
+    }
+    
   render () {
     return (
-      <div className='container' onClick={(e) => {
-        alert('clicou')
-      }}>
-        <Square />
+      <div className='container'>
+      <LikeButton />
+      <SearchButton />
       </div>
     )
   }

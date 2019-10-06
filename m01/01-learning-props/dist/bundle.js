@@ -44,7 +44,8 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-	console.log('Webpack est� funcionando')
+  console.log('Webpack está funcionando')
+  console.log('03-learning-forms')
 
 /***/ })
 /******/ ]);
