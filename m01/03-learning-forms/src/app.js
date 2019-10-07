@@ -21,12 +21,12 @@ class App extends Component {
             checked={this.state.checked}
             onChange={() => {
               this.setState({
-                 checked: !this.state.checked 
+                checked: !this.state.checked
               }, () => {
-                this.setState({ 
-                  showContent: this.state.checked 
-                }) 
-              })              
+                this.setState({
+                  showContent: this.state.checked
+                })
+              })
             }}
           /> Mostar conteúdo
         </label>
