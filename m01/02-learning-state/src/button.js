@@ -4,12 +4,12 @@ import React from 'react'
 
 const Button = ({ children, handleClick }) => (
   <button className='main-button' onClick={handleClick}>
-    {children} 
+    {children}
   </button>
 )
 
 Button.protoTypes = {
-  //Documentação: https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes
+  // Documentação: https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes
   handleClick: React.PropTypes.func.isRequired
 }
 
