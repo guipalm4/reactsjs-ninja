@@ -7,7 +7,6 @@ import ajax from '@fdaciuk/ajax'
 class App extends Component {
   constructor () {
     super()
-    // MOCK
     this.state = {
       userinfo: null,
       repos: [],
@@ -38,7 +37,7 @@ class App extends Component {
     }
   }
 
-  getRepo () {
+  getRepos () {
     ajax().get(`https://api.github.com/users/${this.state.userinfo.login}/repos`)
       .then((result) => {
         console.log(result)
@@ -65,7 +64,7 @@ class App extends Component {
         repos={this.state.repos}
         starred={this.state.starred}
         handleSearch={(e) => this.handleSearch(e)}
-        getRepo={() => this.getRepo()}
+        getRepos={() => this.getRepos()}
         getStarred={() => this.getStarred()}
       />
     )
