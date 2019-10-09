@@ -13,7 +13,7 @@ const AppContent = ({ userinfo, repos, starred, handleSearch, getRepos, getStarr
     {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
     {!!repos.length &&
       <Repos
-        className='repos-info'
+        className='repos'
         title='Repositórios:'
         repos={repos}
       />}
