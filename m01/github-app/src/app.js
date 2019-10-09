@@ -20,7 +20,7 @@ class App extends Component {
     const ENTER = 13
 
     if (keyCode === ENTER) {
-      ajax().get(`https://api.github.com/users/${value}`)
+      ajax().get(this.getGitHubApiUrl(value))
         .then((result) => {
           console.log(result)
           this.setState({
@@ -31,15 +31,24 @@ class App extends Component {
               repos: result.public_repos,
               followers: result.followers,
               following: result.following
-            }
+            },
+            repos: [],
+            starred: []
           })
         })
     }
   }
 
+  getGitHubApiUrl (userlogin, type) {
+    const internalUser = userlogin ? `/${userlogin}` : ''
+    const internalType = type ? `/${type}` : ''
+    return `https://api.github.com/users${internalUser}${internalType}`
+  }
+
   getRepos (type) {
     return (e) => {
-      ajax().get(`https://api.github.com/users/${this.state.userinfo.login}/${type}`)
+      const userlogin = this.state.userinfo.login
+      ajax().get(this.getGitHubApiUrl(userlogin, type))
         .then((result) => {
           this.setState({
             [type]: result.map((repo) => ({
