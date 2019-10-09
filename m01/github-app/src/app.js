@@ -23,7 +23,7 @@ class App extends Component {
     if (keyCode === ENTER) {
       this.setState({ isFetching: true })
       ajax().get(this.getGitHubApiUrl(value))
-        .then((result) => {          
+        .then((result) => {
           this.setState({
             userinfo: {
               username: result.name,

@@ -5,11 +5,15 @@ import Search from './search'
 import UserInfo from './user-info'
 import Actions from './actions'
 import Repos from './repos'
+import Loading from './loading'
 
 const AppContent = ({ userinfo, repos, starred, isFetching, handleSearch, getRepos, getStarred }) => (
   <div className='app'>
     <Search isDisabled={isFetching} handleSearch={handleSearch} />
-    {isFetching && <div>Carregando...</div>}
+    {isFetching &&
+      <div>
+        <Loading />
+      </div>}
     {!!userinfo && <UserInfo userinfo={userinfo} />}
     {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
     {!!repos.length &&
