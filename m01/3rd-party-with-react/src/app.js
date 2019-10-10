@@ -3,7 +3,7 @@
 import React from 'react'
 import Plugin from './plugin'
 
-const App = () => (  
+const App = () => (
   <div>
     <Plugin />
   </div>
