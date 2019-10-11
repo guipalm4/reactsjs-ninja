@@ -16,6 +16,7 @@
     "jest-cli": "^15.1.1"
   },
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:watch": "npm t -- --watch"
   }
 }
