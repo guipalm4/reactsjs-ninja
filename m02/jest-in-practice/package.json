@@ -1,0 +1,14 @@
+{
+  "name": "jest-in-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Guilherme Palma",
+  "license": "ISC",
+  "dependencies": {
+    "jest-cli": "^24.9.0"
+  }
+}
