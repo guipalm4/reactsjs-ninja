@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
   "author": "Guilherme Palma",
   "license": "ISC",
   "dependencies": {
-    "jest-cli": "^24.9.0"
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "jest-cli": "^15.1.1"
+  },
+  "scripts": {
+    "test": "jest --coverage"
   }
 }
